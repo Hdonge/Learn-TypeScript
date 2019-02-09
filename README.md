@@ -215,3 +215,54 @@ Above code snippet gets compiled into javascript code as below
         Days[Days["saturday"] = 6] = "saturday";
     })(Days || (Days = {}));
 ```
+
+**5. Modules:**
+
+Modules are executed within their own scope, not in the global scope; this means that variables, functions, classes, etc. declared in a module are not visible outside the module unless they are explicitly exported using one of the export forms. Conversely, to consume a variable, function, class, interface, etc. exported from a different module, it has to be imported using one of the import forms.
+
+Exporitng module
+```javascript
+  class ZipCodeValidator implements StringValidator {
+      isAcceptable(s: string) {
+          return s.length === 5 && numberRegexp.test(s);
+      }
+  }
+  export { ZipCodeValidator };
+  export { ZipCodeValidator as mainValidator };
+```
+
+Above code snippet gets compiled into javascript code as below
+
+```javascript
+    define(["require", "exports"], function (require, exports) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    var ZipCodeValidator = /** @class */ (function () {
+        function ZipCodeValidator() {
+        }
+        ZipCodeValidator.prototype.isAcceptable = function (s) {
+            return s.length === 5 && numberRegexp.test(s);
+        };
+        return ZipCodeValidator;
+    }());
+    exports.ZipCodeValidator = ZipCodeValidator;
+    exports.mainValidator = ZipCodeValidator;
+});
+```
+
+Importing module
+```javascript
+    import { ZipCodeValidator } from "./ZipCodeValidator";
+
+    let myValidator = new ZipCodeValidator();
+```
+
+Above code snippet gets compiled into javascript code as below
+
+```javascript
+    define(["require", "exports", "./ZipCodeValidator"], function (require, exports, ZipCodeValidator_1) {
+        "use strict";
+        Object.defineProperty(exports, "__esModule", { value: true });
+        var myValidator = new ZipCodeValidator_1.ZipCodeValidator();
+    });
+```
