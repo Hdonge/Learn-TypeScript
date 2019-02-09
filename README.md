@@ -120,7 +120,7 @@ Above class can also be written by providing access specifiers in constructor pa
    }
 ```
 
-Above both code snippets compile into javascript code as below
+Above both code snippets get compiled into javascript code as below
 
 ```javascript
     var Employee = /** @class */ (function () {
@@ -130,5 +130,58 @@ Above both code snippets compile into javascript code as below
         }
         return Employee;
     }());
-
 ```
+
+**3. Interfaces**
+
+An interface is a syntactical contract that an entity should conform to. In other words, an interface defines the syntax that any entity must adhere to. Interfaces define properties, methods, and events, which are the members of the interface. Interfaces contain only the declaration of the members. It is the responsibility of the deriving class to define the members. It often helps in providing a standard structure that the deriving classes would follow.
+
+```javascript
+    interface IOperationContract1{
+          add(): number;
+          substract(): number;
+    }
+
+    interface IOperationContract2{
+          multiply(): number;
+          divide(): number;
+    }
+
+    class Operations implements IOperationContract1,IOperationContract2{
+          add(): number {
+                return 0;
+          }
+          substract(): number {
+                return 0;
+          }
+          multiply(): number {
+                return 0;
+          }
+          divide(): number {
+                return 0;
+          }
+    }
+```
+
+Above code snippet gets compiled into javascript code as below
+
+```javascript
+    var Operations = /** @class */ (function () {
+        function Operations() {
+        }
+        Operations.prototype.add = function () {
+            return 0;
+        };
+        Operations.prototype.substract = function () {
+            return 0;
+        };
+        Operations.prototype.multiply = function () {
+            return 0;
+        };
+        Operations.prototype.divide = function () {
+            return 0;
+        };
+        return Operations;
+    }());
+```
+
