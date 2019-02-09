@@ -65,5 +65,70 @@ All can be used as:
 
 As introduced Typescript is the stictly typed language so variable declared with one type do not accepts values with other types. In case if values assign with diffrent types then it shows compilation error.
 
+```javascript
+ let temp:string = "foo";
+ typeof temp;   //string
+ temp = 5;      // compilation error, as can not assign value with number type to string type
+ temp = true;   // compilation error, as can not assign value with boolean type to string type
+```
 
-  
+But in case of javascript it does not show any compilation error. It changes the type of variable implicitly.
+
+```javascript
+let temp;
+
+typeof temp;   //undefined
+temp = 1;
+typeof temp;   //number
+temp = true;.
+typeof temp;   //boolean
+temp = "bar";.
+typeof temp;   //string
+```
+Hence JavaScript is loosely typed (dynamically typed) language where TypeScript is strongly typed (statically styped) language.
+
+To assign value of any type to any variable use type `any` which acts as super type of all datatypes.
+
+```javascript
+let temp: any = "Hello";
+console.log(typeof temp);   //string
+temp = 9;
+console.log(typeof temp);   //number
+temp = true;
+console.log(typeof temp);   //boolean
+```
+
+**2. Classes:**
+
+A class in terms of OOP is a blueprint for creating objects. A class encapsulates data for the object. Typescript gives built in support for this concept called class.
+
+```javascript
+   class Employee {
+      _name:string;
+      _id:number;
+      constructor(name:string, id:number){
+        this._name = name;
+        this._id = id;
+      }
+   }
+```   
+Above class can also be written by providing access specifiers in constructor parameters which create class properties implicitly.
+```javascript
+   class Employee {
+      constructor(private name:string, private id:number){
+      }
+   }
+```
+
+Above both code snippets compile into javascript code as below
+
+```javascript
+    var Employee = /** @class */ (function () {
+        function Employee(name, id) {
+            this.name = name;
+            this.id = id;
+        }
+        return Employee;
+    }());
+
+```
