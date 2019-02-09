@@ -18,3 +18,25 @@ Latest broswers are adapting ES6 standards in which various key fetaures are int
 
 **TypeScript:** TypeScript has Es6, Es7 and more hence becomes superset. It is **strict statically typed language** also offers key features like Pure Object Orientation, Transpilation and Supporting native Javascript code. Typescript client and server side code can be transpiled into Client-side JavaScript and Server-side Node.Js code later which becomes executable in respective envrironment. It becomes popular amongst developer who come from object oriented backgrounds like C#, Java, C++ who can write simple object oriented code and later it gets transpiled to complex Js to get executed.
 
+**Compiling vs Transpiling:**
+**Compiling** is the general term for taking source code written in one language and transforming into another.
+**Transpiling** is a specific term for taking source code written in one language and transforming into another language that has a similar level of abstraction. 
+
+So when you compile C#, your method bodies are transformed by the compiler into IL. This cannot be called transpiling because the two languages are very different levels of abstraction.
+
+When you compile TypeScript, it is transformed by the compiler into JavaScript. These are very similar levels of abstraction, so you could call this transpiling.
+
+
+## TypeScript Environment Setup
+
+The command line TypeScript compilar can be installed as a Node.Js package. 
+
+**Install**
+``` 
+npm install -g typescript 
+```
+
+**Compile**
+```
+tsc index.ts //which creates index.js file
+```
