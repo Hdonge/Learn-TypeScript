@@ -38,5 +38,32 @@ npm install -g typescript
 
 **Compile**
 ```
-tsc index.ts //which creates index.js file
+tsc index.ts    //which creates index.js file
 ```
+
+## TypeScript Key Features
+
+**1. Types:**
+
+TypeScript suports all the javascript datatypes like number, string, boolean, void, null and undefind. With this it also supports user defined datatypes like Arrays, Enums, Classes, Interfaces etc. It also supports Any as a datatype which is the super type of all datatypes.
+
+All can be used as:
+
+```javascript
+  let name:string;
+  let id:number;
+  let details:any;
+  
+  interface IEmployee {  }
+  class Employee implements IEmployee {  }
+  
+  let employee1:Employee = new Employee();
+  let employee2:IEmployee = new Employee();
+```
+
+**Strongly/Strict/Statically Typed:**
+
+As introduced Typescript is the stictly typed language so variable declared with one type do not accepts values with other types. In case if values assign with diffrent types then it shows compilation error.
+
+
+  
