@@ -132,7 +132,7 @@ Above both code snippets get compiled into javascript code as below
     }());
 ```
 
-**3. Interfaces**
+**3. Interfaces:**
 
 An interface is a syntactical contract that an entity should conform to. In other words, an interface defines the syntax that any entity must adhere to. Interfaces define properties, methods, and events, which are the members of the interface. Interfaces contain only the declaration of the members. It is the responsibility of the deriving class to define the members. It often helps in providing a standard structure that the deriving classes would follow.
 
@@ -185,3 +185,33 @@ Above code snippet gets compiled into javascript code as below
     }());
 ```
 
+**4. Enums:**
+
+Enums allow us to define a set of named constants. Using enums can make it easier to document intent, or create a set of distinct cases. TypeScript provides both numeric and string-based enums.
+
+```javascript
+    enum Days{
+          sunday = 0,
+          monday,
+          tuesday,
+          wednesday,
+          thursday,
+          friday,
+          saturday
+    }
+```
+
+Above code snippet gets compiled into javascript code as below
+
+```javascript
+    var Days;
+    (function (Days) {
+        Days[Days["sunday"] = 0] = "sunday";
+        Days[Days["monday"] = 1] = "monday";
+        Days[Days["tuesday"] = 2] = "tuesday";
+        Days[Days["wednesday"] = 3] = "wednesday";
+        Days[Days["thursday"] = 4] = "thursday";
+        Days[Days["friday"] = 5] = "friday";
+        Days[Days["saturday"] = 6] = "saturday";
+    })(Days || (Days = {}));
+```
