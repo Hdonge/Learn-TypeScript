@@ -267,7 +267,7 @@ Above code snippet gets compiled into javascript code as below
     });
 ```
 
-# Advantages of TypeScript
+## Advantages of TypeScript
 
 * Types increase your agility when doing refactoring. It’s better for the compiler to catch errors than to have things fail at runtime.
 * Types make the code more readable. It helps the developer remember faster what each piece of code is supposed to do. Hence, the developer can add and change the current code faster.
@@ -277,4 +277,6 @@ Above code snippet gets compiled into javascript code as below
 Supports innovation and change, with safety measures to ensure that it doesn’t go completely in the wrong direction
 * Testability. With Dependency Injection, testing becomes easy. You can mock test services with the same interfaces as the real ones. Your code won’t know the difference, and you can perform a full suite of scenarios to get full coverage.
 
-
+### References:
+* https://www.typescriptlang.org/index.html
+* https://www.tutorialspoint.com/typescript/
