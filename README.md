@@ -266,3 +266,15 @@ Above code snippet gets compiled into javascript code as below
         var myValidator = new ZipCodeValidator_1.ZipCodeValidator();
     });
 ```
+
+# Advantages of TypeScript
+
+* Types increase your agility when doing refactoring. It’s better for the compiler to catch errors than to have things fail at runtime.
+* Types make the code more readable. It helps the developer remember faster what each piece of code is supposed to do. Hence, the developer can add and change the current code faster.
+* ES-next compliance
+* Combined with auto-injection libraries, it makes the code-base extremely maintainable and predictable. And it’s typed, so if you ever decide to swap out your logger service, you can depend on types and interfaces to make it a really simple change. Your code simply won’t compile if it receives something it’s not expecting.
+* Helps you implementing SOLID design patterns into a language that doesn’t really support it. 
+Supports innovation and change, with safety measures to ensure that it doesn’t go completely in the wrong direction
+* Testability. With Dependency Injection, testing becomes easy. You can mock test services with the same interfaces as the real ones. Your code won’t know the difference, and you can perform a full suite of scenarios to get full coverage.
+
+
